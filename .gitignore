@@ -1,0 +1,19 @@
+# Mengabaikan file Environment (KATA SANDI & TOKEN)
+.env
+.env.backup
+.env.testing
+/laravel_app/.env
+
+# Mengabaikan folder dependency (File pihak ketiga yang sangat berat)
+vendor/
+/laravel_app/vendor/
+node_modules/
+/laravel_app/node_modules/
+
+# Mengabaikan file cache, session, dan log error di Laravel
+/laravel_app/storage/framework/cache/data/
+/laravel_app/storage/framework/sessions/
+/laravel_app/storage/framework/views/
+/laravel_app/storage/logs/
+/laravel_app/storage/*.key
+

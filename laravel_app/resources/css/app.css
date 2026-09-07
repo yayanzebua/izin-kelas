@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.theme-transitioning * {
+    transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1), color 0.7s cubic-bezier(0.4, 0, 0.2, 1), fill 0.7s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+
+@layer components {
+    /* SweetAlert2: compact + consistent styling (mobile friendly) */
+    .swal2-popup.app-swal {
+        @apply bg-white border border-slate-200 rounded-2xl;
+        width: min(92vw, 26rem) !important;
+        padding: 1.25rem 1.125rem 1rem !important;
+    }
+
+    .swal2-title.app-swal-title {
+        @apply text-slate-800 font-black tracking-tight;
+        font-size: 1.25rem !important;
+        padding: 0 !important;
+    }
+
+    .swal2-html-container.app-swal-text {
+        @apply text-slate-600;
+        margin: 0.5rem 0 0 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.35 !important;
+    }
+
+    .swal2-icon.app-swal-icon {
+        margin: 0.75rem auto 0.25rem !important;
+        transform: scale(0.9);
+    }
+
+    .swal2-actions.app-swal-actions {
+        margin: 1.25rem 0 0 !important;
+        gap: 0.75rem;
+    }
+
+    .swal2-confirm.app-swal-btn,
+    .swal2-cancel.app-swal-btn {
+        @apply rounded-xl px-6 py-2.5 font-bold text-sm;
+        margin: 0 !important;
+    }
+
+    .swal2-confirm.app-swal-btn--primary {
+        @apply bg-blue-600 text-white hover:bg-blue-700;
+    }
+
+    .swal2-confirm.app-swal-btn--danger {
+        @apply bg-rose-600 text-white hover:bg-rose-700;
+    }
+
+    .swal2-cancel.app-swal-btn--neutral {
+        @apply bg-slate-100 text-slate-700 hover:bg-slate-200;
+    }
+
+    @media (max-width: 480px) {
+        .swal2-popup.app-swal {
+            width: min(92vw, 22rem) !important;
+            padding: 1rem 0.95rem 0.9rem !important;
+        }
+
+        .swal2-title.app-swal-title {
+            font-size: 1.1rem !important;
+        }
+
+        .swal2-html-container.app-swal-text {
+            font-size: 0.9rem !important;
+        }
+
+        .swal2-icon.app-swal-icon {
+            transform: scale(0.8);
+        }
+    }
+}
